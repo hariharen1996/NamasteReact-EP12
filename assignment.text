@@ -1,0 +1,48 @@
+Assignment - 12
+
+Theory
+
+1. useContext vs Redux?
+=> useContext is a hook that provides a way to pass data through the component tree without manually passing props down through each nested component. It is designed to share data that can be considered global data for a tree of React components
+const Context = useContext(initialValue);
+=> Redux is a state managing library used in JavaScript apps. It is very popular for React and React-Native. It simply manages the state and data of your application.
+It maintains an store where we can access the data and use in other components in react.
+It consists of Store, Action and Reducers
+
+2. Advantage of redux toolkit over redux?
+In Redux, 
+=> Configuring a Redux store is too complicated
+=> Have to add a lot of packages to build a large-scale application
+=> Redux requires too much boilerplate code which makes it cumbersome to write efficient and clean code.
+
+In ReduxToolkit
+=> Redux ToolKit solves various issues by providing a hook-based implementation of Redux 
+=> RTK gives the ability to write mutable state updates in the reducers.
+=> It also eliminates the use of extra coding by providing boilerplates.
+=> RTK also has the feature of RTK query which eliminates the use of Thunks and makes the query processing faster
+=> It also provides automatic support for Redux Dev-tools Extension and for immer.js library which is a great tool to deal with immutable objects. 
+=> You can also use the various predefined functions of Redux Toolkit which not only speeds up the process but also saves time.
+
+3. Explain dispatcher?
+In redux, dispatch is a function provided by the store that allows you to send an action to update the state of your application. When you call dispatch, the store runs an action through all of the available reducers, which in turn update the state accordingly.
+
+4. Explain Reducer?
+The reducers are the pure functions that contain the logic and calculation that needed to be performed on the state. These functions accept the configurations like name, initialState, which is an object and consists of reducer function, which takes up different actions and updates the state 
+
+5. Explain slice?
+A "slice" is a collection of Redux reducer logic and actions for a single feature in your app, typically defined together in a single file. The name comes from splitting up the root Redux state object into multiple "slices" of state
+
+6. Explain Selector?
+A Selector is used to get the data from redux store and pass it to the components. the logic for deriving data is usually written as functions we call selectors.
+Selectors are primarily used to encapsulate logic for looking up specific values from state, logic for actually deriving values, and improving performance by avoiding unnecessary recalculations. You are not required to use selectors for all state lookups, but they are a standard pattern and widely used.A "selector function" is any function that accepts the Redux store state (or part of the state) as an argument, and returns data that is based on that state. 
+import { useSelector } from '@reduxjs/toolkit'
+
+const store = useSelector((store) => store.cart.data)
+
+7. Explain createSlice and configurations it takes?
+A function that accepts an initial state, an object of reducer functions, and a "slice name", and automatically generates action creators and action types that correspond to the reducers and state.
+It takes name, initialState, reducer.
+
+Coding
+1. Practice making a store, and slices and do read and write operations using redux store 
+2. Build Cart flow using redux store
